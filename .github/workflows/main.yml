@@ -17,9 +17,12 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
-
+    
     - name: set auto-install of extensions
       run: az config set extension.use_dynamic_install=yes_without_prompt 
+
+    - name: set ml extension
+      run: az extension add -n azure-cli-ml
         
     - name: attach workspace
       run: az ml folder attach -w "claudiu-filip-2023" -g "claudiu" 
