@@ -21,7 +21,7 @@ workflow_dispatch:
         run: az config set extension.use_dynamic_install=yes_without_prompt 
         
       - name: attach workspace
-        run: az ml folder attach -w "ml-ws" -g "practical-mlops" 
+        run: az ml folder attach -w "claudiu-filip-2023" -g "practical-mlops" 
         
       - name: retrieve the model
         run: az ml model download -t "." --model-id "roberta-sequence:1"
